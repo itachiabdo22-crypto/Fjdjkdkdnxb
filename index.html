@@ -1,0 +1,1819 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<title>إلى رانيا ❤️</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    -webkit-tap-highlight-color:transparent;
+}
+
+html,body{
+    width:100%;
+    min-height:100%;
+    background:#09030a;
+    color:white;
+    font-family:"Cairo",sans-serif;
+    overflow:hidden;
+}
+
+body{
+    position:relative;
+}
+
+/* =========================
+   BACKGROUND
+========================= */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-5;
+    background:
+        radial-gradient(circle at 20% 20%,rgba(255,70,150,.16),transparent 30%),
+        radial-gradient(circle at 80% 30%,rgba(170,60,255,.13),transparent 32%),
+        radial-gradient(circle at 50% 90%,rgba(255,30,110,.15),transparent 35%),
+        linear-gradient(145deg,#09030a,#170714,#09030d);
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-4;
+    background-image:
+        radial-gradient(circle,rgba(255,255,255,.9) 1px,transparent 1.5px),
+        radial-gradient(circle,rgba(255,170,220,.7) 1px,transparent 1.5px);
+    background-size:80px 80px,125px 125px;
+    background-position:0 0,30px 50px;
+    opacity:.35;
+    animation:starsMove 25s linear infinite;
+}
+
+@keyframes starsMove{
+    from{transform:translateY(0)}
+    to{transform:translateY(-80px)}
+}
+
+/* =========================
+   SCREENS
+========================= */
+
+.screen{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100dvh;
+    padding:25px 18px 35px;
+    display:none;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    overflow-y:auto;
+    overflow-x:hidden;
+    opacity:0;
+    transform:scale(.96);
+}
+
+.screen.active{
+    display:flex;
+    animation:screenIn .8s ease forwards;
+}
+
+@keyframes screenIn{
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+.screen::-webkit-scrollbar{
+    width:0;
+}
+
+/* =========================
+   TYPOGRAPHY
+========================= */
+
+.smallTitle{
+    color:#ff9dca;
+    letter-spacing:4px;
+    font-size:11px;
+    font-weight:800;
+    margin-bottom:10px;
+    text-transform:uppercase;
+}
+
+.title{
+    text-align:center;
+    font-size:clamp(30px,8vw,58px);
+    font-weight:900;
+    line-height:1.25;
+    color:#fff;
+    text-shadow:
+        0 0 12px rgba(255,100,180,.55),
+        0 0 35px rgba(255,40,140,.2);
+}
+
+.subtitle{
+    text-align:center;
+    color:#f8dbe9;
+    max-width:700px;
+    line-height:2;
+    font-size:15px;
+    margin-top:12px;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.mainBtn{
+    border:1px solid rgba(255,180,220,.45);
+    background:
+        linear-gradient(135deg,rgba(255,78,155,.95),rgba(174,49,160,.95));
+    color:white;
+    padding:14px 25px;
+    min-height:52px;
+    border-radius:999px;
+    font-family:"Cairo";
+    font-size:14px;
+    font-weight:800;
+    cursor:pointer;
+    box-shadow:
+        0 8px 30px rgba(255,40,140,.25),
+        inset 0 1px 0 rgba(255,255,255,.25);
+    transition:.25s;
+    margin-top:20px;
+}
+
+.mainBtn:active{
+    transform:scale(.94);
+}
+
+.secondaryBtn{
+    border:1px solid rgba(255,190,220,.35);
+    background:rgba(255,255,255,.07);
+    color:white;
+    padding:12px 22px;
+    border-radius:999px;
+    font-family:"Cairo";
+    cursor:pointer;
+}
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+.floating{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:50;
+    overflow:hidden;
+}
+
+.floatHeart{
+    position:absolute;
+    bottom:-50px;
+    font-size:18px;
+    opacity:.8;
+    animation:floatUp linear forwards;
+}
+
+@keyframes floatUp{
+    0%{
+        transform:translateY(0) scale(.5) rotate(0deg);
+        opacity:0;
+    }
+    15%{opacity:.9}
+    100%{
+        transform:translateY(-110vh) scale(1.3) rotate(25deg);
+        opacity:0;
+    }
+}
+
+/* =========================
+   MUSIC
+========================= */
+
+.musicBtn{
+    position:fixed;
+    top:15px;
+    left:15px;
+    z-index:200;
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    border:1px solid rgba(255,190,220,.4);
+    background:rgba(20,5,18,.72);
+    backdrop-filter:blur(10px);
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+    box-shadow:0 5px 20px rgba(255,30,130,.2);
+}
+
+/* =========================
+   PROGRESS
+========================= */
+
+.progress{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:3px;
+    background:rgba(255,255,255,.08);
+    z-index:300;
+}
+
+.progressBar{
+    width:0%;
+    height:100%;
+    background:linear-gradient(90deg,#ff5da8,#ffb4db,#c85cff);
+    box-shadow:0 0 12px #ff4d9d;
+    transition:width .7s ease;
+}
+
+/* =========================
+   SCREEN 1
+========================= */
+
+.moon{
+    width:145px;
+    height:145px;
+    border-radius:50%;
+    background:
+        radial-gradient(circle at 35% 30%,#fff,#ffd5e9 48%,#ff8ec1 100%);
+    box-shadow:
+        0 0 35px rgba(255,180,220,.65),
+        0 0 100px rgba(255,60,160,.22);
+    position:relative;
+    margin-bottom:30px;
+    animation:moonFloat 4s ease-in-out infinite;
+}
+
+.moon::after{
+    content:"";
+    position:absolute;
+    width:145px;
+    height:145px;
+    border-radius:50%;
+    background:#10040e;
+    top:-18px;
+    right:-35px;
+}
+
+@keyframes moonFloat{
+    50%{transform:translateY(-10px)}
+}
+
+.city{
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:18%;
+    background:linear-gradient(to top,#050205,transparent);
+    opacity:.8;
+}
+
+/* =========================
+   KITTY
+========================= */
+
+.kitty{
+    width:min(190px,55vw);
+    max-height:210px;
+    object-fit:contain;
+    margin:15px auto;
+    filter:
+        drop-shadow(0 12px 20px rgba(255,50,150,.28));
+    animation:kittyFloat 4s ease-in-out infinite;
+}
+
+@keyframes kittyFloat{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-7px)}
+}
+
+/* =========================
+   CARD
+========================= */
+
+.card{
+    width:min(720px,94vw);
+    padding:25px 20px;
+    border-radius:28px;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.085),
+            rgba(255,80,160,.045)
+        );
+    border:1px solid rgba(255,190,220,.18);
+    box-shadow:
+        0 20px 70px rgba(0,0,0,.35),
+        inset 0 1px 0 rgba(255,255,255,.08);
+    backdrop-filter:blur(18px);
+}
+
+.card p{
+    color:#f6dce8;
+    font-size:14px;
+    line-height:2.15;
+    margin-bottom:14px;
+}
+
+/* =========================
+   ROSE GARDEN
+========================= */
+
+.roseGrid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+    width:min(620px,94vw);
+    margin-top:25px;
+}
+
+.rose{
+    aspect-ratio:1;
+    border:1px solid rgba(255,170,210,.2);
+    border-radius:24px;
+    background:rgba(255,255,255,.055);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    cursor:pointer;
+    transition:.25s;
+    backdrop-filter:blur(10px);
+}
+
+.rose:active{
+    transform:scale(.91);
+}
+
+.rose span:first-child{
+    font-size:43px;
+    filter:drop-shadow(0 0 12px rgba(255,60,140,.5));
+}
+
+.rose span:last-child{
+    font-size:11px;
+    color:#f7c6dd;
+    margin-top:5px;
+}
+
+/* =========================
+   POPUP
+========================= */
+
+.popup{
+    position:fixed;
+    inset:0;
+    z-index:500;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    background:rgba(4,0,5,.78);
+    backdrop-filter:blur(12px);
+}
+
+.popup.show{
+    display:flex;
+    animation:fadeIn .3s ease;
+}
+
+@keyframes fadeIn{
+    from{opacity:0}
+    to{opacity:1}
+}
+
+.popupBox{
+    width:min(500px,94vw);
+    border-radius:30px;
+    padding:30px 22px;
+    text-align:center;
+    background:
+        linear-gradient(145deg,#260b1f,#12050f);
+    border:1px solid rgba(255,170,220,.25);
+    box-shadow:0 25px 100px rgba(0,0,0,.7);
+}
+
+.popupBox h3{
+    font-size:24px;
+    margin-bottom:15px;
+    color:#ffb7d8;
+}
+
+.popupBox p{
+    line-height:2;
+    color:#f7dbe9;
+    font-size:14px;
+}
+
+/* =========================
+   ROOM
+========================= */
+
+.room{
+    width:min(700px,94vw);
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:14px;
+    margin-top:20px;
+}
+
+.roomItem{
+    min-height:120px;
+    border-radius:25px;
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,180,220,.17);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    transition:.25s;
+}
+
+.roomItem:active{
+    transform:scale(.94);
+}
+
+.roomIcon{
+    font-size:38px;
+    margin-bottom:8px;
+}
+
+.roomItem span:last-child{
+    font-size:11px;
+    color:#f8c9df;
+}
+
+/* =========================
+   TIMELINE
+========================= */
+
+.timeline{
+    width:min(650px,94vw);
+    margin-top:20px;
+}
+
+.story{
+    position:relative;
+    padding:0 25px 28px;
+    border-right:2px solid rgba(255,100,170,.35);
+}
+
+.story::before{
+    content:"❤";
+    position:absolute;
+    right:-12px;
+    top:0;
+    width:23px;
+    height:23px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    background:#ff4d9d;
+    font-size:10px;
+    box-shadow:0 0 18px #ff4d9d;
+}
+
+.story h3{
+    color:#ffb1d4;
+    margin-bottom:7px;
+}
+
+.story p{
+    color:#eed3df;
+    font-size:13px;
+    line-height:2;
+}
+
+/* =========================
+   GALAXY
+========================= */
+
+.galaxy{
+    position:relative;
+    width:min(700px,94vw);
+    height:55vh;
+    min-height:330px;
+    border-radius:35px;
+    overflow:hidden;
+    background:
+        radial-gradient(circle at 50% 50%,rgba(255,70,160,.15),transparent 35%),
+        radial-gradient(circle at 20% 70%,rgba(100,60,255,.18),transparent 30%),
+        #08040e;
+    border:1px solid rgba(255,180,220,.15);
+    box-shadow:inset 0 0 70px rgba(255,20,150,.08);
+}
+
+.star{
+    position:absolute;
+    width:11px;
+    height:11px;
+    border-radius:50%;
+    background:white;
+    box-shadow:0 0 15px #fff,0 0 30px #ff78ba;
+    cursor:pointer;
+    animation:twinkle 1.7s infinite alternate;
+}
+
+@keyframes twinkle{
+    from{opacity:.35;transform:scale(.7)}
+    to{opacity:1;transform:scale(1.25)}
+}
+
+.bigHeart{
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    font-size:80px;
+    filter:drop-shadow(0 0 25px #ff4d9d);
+    animation:heartBeat 1.4s infinite;
+}
+
+@keyframes heartBeat{
+    50%{transform:translate(-50%,-50%) scale(1.12)}
+}
+
+/* =========================
+   GIFT
+========================= */
+
+.gift{
+    width:170px;
+    height:135px;
+    position:relative;
+    cursor:pointer;
+    margin:30px auto;
+}
+
+.giftBody{
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:90px;
+    border-radius:8px 8px 18px 18px;
+    background:linear-gradient(135deg,#ff5caa,#c73583);
+    box-shadow:0 20px 40px rgba(255,50,150,.25);
+}
+
+.giftLid{
+    position:absolute;
+    top:15px;
+    left:-7px;
+    width:calc(100% + 14px);
+    height:35px;
+    border-radius:10px;
+    background:linear-gradient(135deg,#ff89c2,#e34891);
+    transition:.6s;
+    z-index:3;
+}
+
+.giftRibbonV{
+    position:absolute;
+    width:22px;
+    height:100%;
+    background:#ffd2e7;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+.giftRibbonH{
+    position:absolute;
+    width:100%;
+    height:18px;
+    background:#ffd2e7;
+    top:35%;
+}
+
+.gift.open .giftLid{
+    transform:translateY(-75px) rotate(-7deg);
+}
+
+.giftHint{
+    text-align:center;
+    color:#ffb6d7;
+    font-size:13px;
+}
+
+/* =========================
+   FINAL
+========================= */
+
+.finalHeart{
+    font-size:100px;
+    filter:drop-shadow(0 0 35px #ff4a9f);
+    animation:finalPulse 1.5s infinite;
+}
+
+@keyframes finalPulse{
+    50%{transform:scale(1.13)}
+}
+
+.finalText{
+    max-width:700px;
+    text-align:center;
+    font-family:"Amiri",serif;
+    font-size:24px;
+    line-height:2.1;
+    color:#ffe4ef;
+}
+
+/* =========================
+   PARTICLES
+========================= */
+
+.particle{
+    position:fixed;
+    pointer-events:none;
+    z-index:1000;
+    font-size:20px;
+    animation:particleOut 1.4s ease-out forwards;
+}
+
+@keyframes particleOut{
+    0%{
+        transform:translate(0,0) scale(.5) rotate(0);
+        opacity:1;
+    }
+    100%{
+        transform:
+            translate(
+                calc((var(--x))*1px),
+                calc((var(--y))*1px)
+            )
+            scale(1.4)
+            rotate(360deg);
+        opacity:0;
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:600px){
+
+    .screen{
+        padding:25px 14px 30px;
+    }
+
+    .title{
+        font-size:31px;
+    }
+
+    .subtitle{
+        font-size:13px;
+    }
+
+    .card{
+        padding:20px 16px;
+    }
+
+    .card p{
+        font-size:13px;
+        line-height:2;
+    }
+
+    .roseGrid{
+        grid-template-columns:repeat(3,1fr);
+        gap:9px;
+    }
+
+    .rose{
+        border-radius:18px;
+    }
+
+    .rose span:first-child{
+        font-size:32px;
+    }
+
+    .room{
+        gap:9px;
+    }
+
+    .roomItem{
+        min-height:105px;
+    }
+
+    .finalText{
+        font-size:21px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     MUSIC
+========================= -->
+
+<audio id="music" loop preload="auto">
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<button class="musicBtn" id="musicBtn" onclick="toggleMusic()">
+    🔇
+</button>
+
+<div class="progress">
+    <div class="progressBar" id="progressBar"></div>
+</div>
+
+<div class="floating" id="floating"></div>
+
+<!-- =========================
+     SCREEN 1
+========================= -->
+
+<section class="screen active" id="screen1">
+
+    <div class="moon"></div>
+
+    <div class="smallTitle">
+        A LITTLE WORLD MADE FOR YOU
+    </div>
+
+    <h1 class="title">
+        رانيا
+    </h1>
+
+    <p class="subtitle">
+        هناك أماكن كثيرة في العالم...
+        <br>
+        لكنني صنعت لكِ مكانًا صغيرًا
+        لا يوجد فيه أحد سواكِ. 🤍
+    </p>
+
+    <button class="mainBtn" onclick="startJourney()">
+        ادخلي عالمي 🌙
+    </button>
+
+</section>
+
+<!-- =========================
+     SCREEN 2
+========================= -->
+
+<section class="screen" id="screen2">
+
+    <div class="smallTitle">
+        WELCOME TO MY HEART
+    </div>
+
+    <img src="kitty1.png"
+         class="kitty"
+         alt="Hello Kitty">
+
+    <h2 class="title" style="font-size:32px">
+        أهلًا بكِ يا أجمل رانيا ❤️
+    </h2>
+
+    <div class="card" style="margin-top:18px">
+
+        <p>
+            قبل أن نبدأ...
+            أريدكِ أن تعرفي أن هذا الموقع ليس مجرد صفحات
+            وضعتها أمامكِ.
+        </p>
+
+        <p>
+            كل صفحة هنا تحمل جزءًا صغيرًا من شيء
+            أكبر بكثير...
+            شيء اسمه أنتِ.
+        </p>
+
+        <p>
+            ربما لن أستطيع أن أضع كل ما في قلبي داخل شاشة،
+            لكنني سأحاول.
+        </p>
+
+    </div>
+
+    <button class="mainBtn" onclick="nextScreen(3)">
+        لنبدأ الحكاية 🌹
+    </button>
+
+</section>
+
+<!-- =========================
+     SCREEN 3
+========================= -->
+
+<section class="screen" id="screen3">
+
+    <div class="smallTitle">
+        THE ROSE GARDEN
+    </div>
+
+    <h2 class="title" style="font-size:30px">
+        كل وردة تخبئ شيئًا عنكِ 🌹
+    </h2>
+
+    <p class="subtitle">
+        اضغطي على الورود واحدة واحدة...
+    </p>
+
+    <div class="roseGrid">
+
+        <div class="rose" onclick="showRose(1)">
+            <span>🌹</span>
+            <span>قلبكِ</span>
+        </div>
+
+        <div class="rose" onclick="showRose(2)">
+            <span>🌹</span>
+            <span>ابتسامتكِ</span>
+        </div>
+
+        <div class="rose" onclick="showRose(3)">
+            <span>🌹</span>
+            <span>حنانكِ</span>
+        </div>
+
+        <div class="rose" onclick="showRose(4)">
+            <span>🌹</span>
+            <span>روحكِ</span>
+        </div>
+
+        <div class="rose" onclick="showRose(5)">
+            <span>🌹</span>
+            <span>تفاصيلكِ</span>
+        </div>
+
+        <div class="rose" onclick="showRose(6)">
+            <span>🌹</span>
+            <span>أنتِ</span>
+        </div>
+
+    </div>
+
+    <button class="mainBtn" onclick="nextScreen(4)">
+        هناك مكان آخر ينتظرنا 🎀
+    </button>
+
+</section>
+
+<!-- =========================
+     SCREEN 4
+========================= -->
+
+<section class="screen" id="screen4">
+
+    <div class="smallTitle">
+        RANIA'S LITTLE ROOM
+    </div>
+
+    <h2 class="title" style="font-size:30px">
+        غرفة صغيرة... مليئة بأشياء تشبهكِ 🎀
+    </h2>
+
+    <img src="kitty2.png"
+         class="kitty"
+         style="width:140px"
+         alt="Hello Kitty">
+
+    <div class="room">
+
+        <div class="roomItem" onclick="showRoom(1)">
+            <span class="roomIcon">🧸</span>
+            <span>شيء يشبه طفولتكِ</span>
+        </div>
+
+        <div class="roomItem" onclick="showRoom(2)">
+            <span class="roomIcon">🌷</span>
+            <span>شيء يشبه رقتكِ</span>
+        </div>
+
+        <div class="roomItem" onclick="showRoom(3)">
+            <span class="roomIcon">💌</span>
+            <span>رسالة مخفية</span>
+        </div>
+
+        <div class="roomItem" onclick="showRoom(4)">
+            <span class="roomIcon">🌙</span>
+            <span>شيء يشبه أحلامنا</span>
+        </div>
+
+    </div>
+
+    <button class="mainBtn" onclick="nextScreen(5)">
+        أريدكِ أن تعرفي شيئًا مهمًا 🤍
+    </button>
+
+</section>
+
+<!-- =========================
+     SCREEN 5
+========================= -->
+
+<section class="screen" id="screen5">
+
+    <div class="smallTitle">
+        THE HEART I SEE IN YOU
+    </div>
+
+    <h2 class="title" style="font-size:32px;margin-bottom:20px">
+        هناك شيء فيكِ أحبه جدًا 🤍
+    </h2>
+
+    <img class="kitty"
+         src="kitty3.png"
+         alt="Hello Kitty"
+         style="width:170px;margin-bottom:10px">
+
+    <div class="card">
+
+        <p>
+            رانيا...
+        </p>
+
+        <p>
+            هناك أشياء أحبها فيكِ لأنني أراها في كلامكِ،
+            وأشياء أحبها لأنني أراها في تصرفاتكِ.
+        </p>
+
+        <p>
+            لكن هناك موقفًا صغيرًا بقي في ذهني،
+            وربما لا تعرفين كم جعلني أراكِ بطريقة أجمل.
+        </p>
+
+        <p style="color:#ffb6da;font-weight:bold;font-size:17px">
+            عندما رأيتِ طفلة صغيرة تبكي...
+        </p>
+
+        <p>
+            لم تكتفي بالنظر إليها مثل الكثير من الناس.
+        </p>
+
+        <p>
+            لم تكملي طريقكِ وكأن الأمر لا يعنيكِ،
+            ولم تقولي إن شخصًا آخر سيساعدها.
+        </p>
+
+        <p>
+            رأيتِ طفلة تحتاج إلى أحد،
+            فاقتربتِ منها بنفسكِ وحاولتِ مساعدتها.
+        </p>
+
+        <p>
+            وربما بالنسبة لكِ كان الأمر بسيطًا جدًا،
+            مجرد موقف مرّ وانتهى.
+        </p>
+
+        <p>
+            لكن بالنسبة لي،
+            كان ذلك الموقف كافيًا لأرى شيئًا جميلًا جدًا فيكِ.
+        </p>
+
+        <p style="color:#ffd5e8">
+            رأيتُ قلبًا لا يستطيع أن يتجاهل شخصًا يحتاج إلى المساعدة.
+        </p>
+
+        <p>
+            وهذا بالضبط أحد الأشياء التي تجعلني أحبكِ أكثر.
+        </p>
+
+        <p>
+            ليس فقط لأنكِ جميلة،
+            ولا لأنكِ تجعلينني أبتسم،
+            ولا لأن وجودكِ يسعدني...
+        </p>
+
+        <p>
+            بل لأنني أحب الإنسانة التي أنتِ عليها من الداخل.
+        </p>
+
+        <p>
+            الإنسانة التي يمكن أن تتوقف من أجل طفلة صغيرة،
+            بينما كان بإمكانها ببساطة أن تكمل طريقها مثل الآخرين.
+        </p>
+
+        <p>
+            ذلك الموقف جعلني أفكر:
+        </p>
+
+        <p style="
+            font-size:20px;
+            color:#ffb6da;
+            font-weight:800;
+            line-height:1.8;
+        ">
+            «هذه الفتاة قلبها طيب فعلًا.» ❤️
+        </p>
+
+        <p>
+            وأعتقد أن أجمل ما يمكن أن يمتلكه الإنسان
+            ليس جمال وجهه فقط،
+            وإنما قلب يجعله يشعر بغيره.
+        </p>
+
+        <p>
+            ولهذا أحببت هذه الصفة فيكِ جدًا.
+        </p>
+
+        <p>
+            وأتمنى ألا يتغير هذا الشيء فيكِ أبدًا...
+            ذلك القلب الذي يرى من يحتاج إلى المساعدة
+            ويحاول أن يفعل شيئًا من أجله.
+        </p>
+
+        <p style="color:#ffd4e8;font-size:16px">
+            احتفظي دائمًا بهذا القلب يا رانيا. 🌹
+        </p>
+
+    </div>
+
+    <button class="mainBtn" onclick="nextScreen(6)">
+        هناك شيء آخر أريد أن أريكِ إياه 🌙
+    </button>
+
+</section>
+
+<!-- =========================
+     SCREEN 6
+========================= -->
+
+<section class="screen" id="screen6">
+
+    <div class="smallTitle">
+        A LETTER FROM MY HEART
+    </div>
+
+    <img src="kitty4.png"
+         class="kitty"
+         style="width:145px"
+         alt="Hello Kitty">
+
+    <div class="card">
+
+        <h2 style="
+            text-align:center;
+            color:#ffb5d7;
+            margin-bottom:18px;
+            font-size:25px;
+        ">
+            رسالة لكِ...
+        </h2>
+
+        <p>
+            رانيا...
+        </p>
+
+        <p>
+            لو سألتِني يومًا ما الذي أحببته فيكِ،
+            ربما لن أستطيع أن أجيب بجملة واحدة.
+        </p>
+
+        <p>
+            لأنني لم أحب شيئًا واحدًا فيكِ...
+            أحببت مجموعة التفاصيل الصغيرة
+            التي أصبحت مع الوقت أنتِ.
+        </p>
+
+        <p>
+            أحببت صوتكِ،
+            ضحكتكِ،
+            طريقتكِ في الكلام،
+            اهتمامكِ،
+            وحتى الأشياء الصغيرة التي ربما لا تنتبهين لها.
+        </p>
+
+        <p>
+            أحببت شعوري عندما أتحدث معكِ،
+            وكأن العالم يصبح أهدأ قليلًا.
+        </p>
+
+        <p>
+            وأحببت فكرة أن هناك شخصًا
+            أريد أن أخبره بكل شيء.
+        </p>
+
+        <p style="
+            color:#ffd4e7;
+            font-size:17px;
+            font-weight:700;
+        ">
+            ذلك الشخص كنتِ أنتِ. 🤍
+        </p>
+
+        <p>
+            ولهذا لا أريد أن تكون قصتنا مجرد لحظة جميلة
+            نتذكرها بعد سنوات.
+        </p>
+
+        <p>
+            أريد أن تكون بداية أشياء كثيرة جميلة.
+        </p>
+
+    </div>
+
+    <button class="mainBtn" onclick="nextScreen(7)">
+        تعالي إلى السماء قليلًا ✨
+    </button>
+
+</section>
+
+<!-- =========================
+     SCREEN 7
+========================= -->
+
+<section class="screen" id="screen7">
+
+    <div class="smallTitle">
+        OUR LITTLE GALAXY
+    </div>
+
+    <h2 class="title" style="font-size:30px">
+        كل نجمة تخبئ شعورًا ✨
+    </h2>
+
+    <p class="subtitle">
+        اضغطي على النجوم...
+    </p>
+
+    <div class="galaxy">
+
+        <div class="bigHeart">❤️</div>
+
+        <div class="star" style="left:12%;top:18%" onclick="showStar(1)"></div>
+        <div class="star" style="left:28%;top:32%" onclick="showStar(2)"></div>
+        <div class="star" style="left:73%;top:20%" onclick="showStar(3)"></div>
+        <div class="star" style="left:86%;top:43%" onclick="showStar(4)"></div>
+        <div class="star" style="left:18%;top:70%" onclick="showStar(5)"></div>
+        <div class="star" style="left:65%;top:75%" onclick="showStar(6)"></div>
+        <div class="star" style="left:45%;top:15%" onclick="showStar(7)"></div>
+        <div class="star" style="left:52%;top:87%" onclick="showStar(8)"></div>
+
+    </div>
+
+    <button class="mainBtn" onclick="nextScreen(8)">
+        بقيت المفاجأة الأخيرة 🎁
+    </button>
+
+</section>
+
+<!-- =========================
+     SCREEN 8
+========================= -->
+
+<section class="screen" id="screen8">
+
+    <div class="smallTitle">
+        ONE LAST SURPRISE
+    </div>
+
+    <h2 class="title" style="font-size:31px">
+        هل أنتِ مستعدة؟ 🎁
+    </h2>
+
+    <p class="subtitle">
+        هذه المرة...
+        لن أقول لكِ ما بداخلها.
+    </p>
+
+    <div class="gift" id="gift" onclick="openGift()">
+
+        <div class="giftLid"></div>
+
+        <div class="giftBody">
+            <div class="giftRibbonV"></div>
+            <div class="giftRibbonH"></div>
+        </div>
+
+    </div>
+
+    <div class="giftHint">
+        اضغطي على الهدية 🎀
+    </div>
+
+</section>
+
+<!-- =========================
+     SCREEN 9
+========================= -->
+
+<section class="screen" id="screen9">
+
+    <img src="kitty5.png"
+         class="kitty"
+         style="width:165px"
+         alt="Hello Kitty">
+
+    <div class="smallTitle">
+        FROM ME TO YOU
+    </div>
+
+    <div class="finalHeart">
+        ❤️
+    </div>
+
+    <h2 class="title" style="font-size:32px">
+        رانيا...
+    </h2>
+
+    <p class="finalText">
+        ربما كانت هذه مجرد صفحات على شاشة،
+        لكنها تحمل شيئًا حقيقيًا جدًا...
+        <br><br>
+
+        تحمل جزءًا من قلبي،
+        وجزءًا من الكلام الذي ربما لا أعرف
+        كيف أقوله لكِ عندما تكونين أمامي.
+        <br><br>
+
+        أنتِ لستِ مجرد شخص أحببته...
+        أنتِ إنسانة أصبحت لها مكانة خاصة جدًا
+        في قلبي وحياتي.
+        <br><br>
+
+        أحب تفاصيلكِ،
+        أحب قلبكِ،
+        أحب طيبتكِ،
+        وأحب وجودكِ.
+        <br><br>
+
+        وإذا كان لي أن أختار أمنية واحدة
+        من كل الأمنيات...
+        <br><br>
+
+        فسأختار أن تبقى ابتسامتكِ موجودة
+        وأن أبقى واحدًا من الأشخاص
+        الذين يجعلونها تظهر. 🤍
+        <br><br>
+
+        أحبكِ يا رانيا...
+        أكثر مما تستطيع هذه الصفحة أن تشرح. 🌹
+    </p>
+
+    <button class="mainBtn" onclick="finalExplosion()">
+        اضغطي هنا... ❤️
+    </button>
+
+</section>
+
+<!-- =========================
+     FINAL SCREEN
+========================= -->
+
+<section class="screen" id="finalScreen">
+
+    <div class="finalHeart">
+        💗
+    </div>
+
+    <h1 class="title">
+        إلى الأبد...
+    </h1>
+
+    <p class="finalText">
+        رانيا ❤️
+        <br><br>
+        لو عاد بي الزمن إلى أول يوم عرفتكِ فيه،
+        سأختار أن أعرفكِ مرة أخرى.
+        <br><br>
+        ومرة أخرى...
+        ومرة أخرى...
+        <br><br>
+        لأن وجودكِ في قصتي
+        من الأشياء التي لا أتمنى أن تنتهي. 🌹
+    </p>
+
+    <div style="
+        margin-top:25px;
+        color:#ffb4d6;
+        font-size:13px;
+    ">
+        صُنعت بكل الحب لكِ ❤️
+    </div>
+
+</section>
+
+<!-- =========================
+     POPUP
+========================= -->
+
+<div class="popup" id="popup">
+
+    <div class="popupBox">
+
+        <h3 id="popupTitle">
+            ❤️
+        </h3>
+
+        <p id="popupText">
+        </p>
+
+        <button class="mainBtn"
+                onclick="closePopup()"
+                style="margin-top:22px">
+            أغلقي الرسالة 🤍
+        </button>
+
+    </div>
+
+</div>
+
+<script>
+
+/* ==========================================
+   VARIABLES
+========================================== */
+
+let currentScreen = 1;
+
+const totalScreens = 9;
+
+const music = document.getElementById("music");
+
+let musicStarted = false;
+
+
+/* ==========================================
+   SCREEN NAVIGATION
+========================================== */
+
+function nextScreen(number){
+
+    const current =
+        document.getElementById("screen" + currentScreen);
+
+    if(current){
+        current.classList.remove("active");
+    }
+
+    const next =
+        document.getElementById("screen" + number);
+
+    if(next){
+        next.classList.add("active");
+        currentScreen = number;
+    }
+
+    updateProgress();
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+    createBurst(
+        window.innerWidth / 2,
+        window.innerHeight / 2,
+        12
+    );
+}
+
+
+/* ==========================================
+   START
+========================================== */
+
+function startJourney(){
+
+    playMusic();
+
+    createBurst(
+        window.innerWidth / 2,
+        window.innerHeight / 2,
+        35
+    );
+
+    setTimeout(()=>{
+        nextScreen(2);
+    },500);
+}
+
+
+/* ==========================================
+   PROGRESS
+========================================== */
+
+function updateProgress(){
+
+    const bar =
+        document.getElementById("progressBar");
+
+    const percent =
+        ((currentScreen - 1) / (totalScreens - 1)) * 100;
+
+    bar.style.width = percent + "%";
+}
+
+
+/* ==========================================
+   MUSIC
+========================================== */
+
+function playMusic(){
+
+    music.volume = 0.55;
+
+    const promise = music.play();
+
+    if(promise !== undefined){
+
+        promise
+        .then(()=>{
+            musicStarted = true;
+            document.getElementById("musicBtn").textContent = "🔊";
+        })
+        .catch(()=>{
+            document.getElementById("musicBtn").textContent = "🎵";
+        });
+
+    }
+}
+
+
+function toggleMusic(){
+
+    if(music.paused){
+
+        music.play()
+        .then(()=>{
+            musicStarted = true;
+            document.getElementById("musicBtn").textContent = "🔊";
+        })
+        .catch(()=>{});
+
+    }else{
+
+        music.pause();
+
+        document.getElementById("musicBtn").textContent = "🔇";
+
+    }
+}
+
+
+/* ==========================================
+   POPUP
+========================================== */
+
+function showPopup(title,text){
+
+    document.getElementById("popupTitle").textContent =
+        title;
+
+    document.getElementById("popupText").textContent =
+        text;
+
+    document.getElementById("popup").classList.add("show");
+
+    createBurst(
+        window.innerWidth/2,
+        window.innerHeight/2,
+        15
+    );
+}
+
+
+function closePopup(){
+
+    document
+        .getElementById("popup")
+        .classList.remove("show");
+}
+
+
+/* ==========================================
+   ROSES
+========================================== */
+
+function showRose(number){
+
+    const messages = {
+
+        1:
+        "أكثر شيء يجعلني أقدّركِ ليس فقط جمالكِ، بل ذلك القلب الذي أشعر أنه أرق بكثير مما تظهرين.",
+
+        2:
+        "ابتسامتكِ من الأشياء الصغيرة التي تستطيع أن تغيّر مزاجي بالكامل دون أن تعرفي.",
+
+        3:
+        "فيكِ حنان يجعل وجودكِ مختلفًا... كأن الحديث معكِ يصبح أكثر راحة.",
+
+        4:
+        "روحكِ هي أحد الأسباب التي جعلتني لا أراكِ مثل أي شخص آخر.",
+
+        5:
+        "أحب التفاصيل الصغيرة فيكِ... الأشياء التي ربما لا تلاحظينها أنتِ، لكنها بالنسبة لي مهمة.",
+
+        6:
+        "أما الوردة الأخيرة فلا أحتاج أن أشرحها... لأنها ببساطة أنتِ. ❤️"
+
+    };
+
+    showPopup(
+        "وردة لكِ 🌹",
+        messages[number]
+    );
+}
+
+
+/* ==========================================
+   ROOM
+========================================== */
+
+function showRoom(number){
+
+    const messages = {
+
+        1:
+        "أحيانًا أشعر أن بداخلكِ جانبًا طفوليًا جميلًا أتمنى أن يبقى معكِ دائمًا. 🧸",
+
+        2:
+        "فيكِ رقة لا أستطيع وصفها بسهولة... لكنها تظهر في مواقفكِ أكثر من كلامكِ. 🌷",
+
+        3:
+        "لو فتحتِ كل الرسائل الموجودة داخل قلبي، ستجدين اسمكِ في الكثير منها. 💌",
+
+        4:
+        "أتمنى أن تكون أحلامكِ القادمة أجمل من كل شيء تتمنينه الآن. 🌙"
+
+    };
+
+    showPopup(
+        "شيء صغير عنكِ 🤍",
+        messages[number]
+    );
+}
+
+
+/* ==========================================
+   STARS
+========================================== */
+
+function showStar(number){
+
+    const messages = {
+
+        1:"نجمة تقول: وجودكِ يجعل الأيام العادية أجمل. ✨",
+
+        2:"نجمة تقول: أحب الحديث معكِ حتى عندما لا يكون لدينا شيء مهم لنقوله. 🤍",
+
+        3:"نجمة تقول: بعض الأشخاص يدخلون حياتنا صدفة... ثم يصبحون أهم من الصدفة نفسها.",
+
+        4:"نجمة تقول: أحب أن أراكِ سعيدة، حتى في الأشياء الصغيرة جدًا.",
+
+        5:"نجمة تقول: أتمنى أن تكون أيامكِ القادمة مليئة بالراحة.",
+
+        6:"نجمة تقول: إذا تعبتِ يومًا، أتمنى أن تتذكري أن هناك قلبًا يهتم بكِ.",
+
+        7:"نجمة تقول: بعض المشاعر لا تحتاج إلى شرح... يكفي أن تُشعر بها.",
+
+        8:"والنجمة الأخيرة تقول: أحبكِ يا رانيا. ❤️"
+
+    };
+
+    showPopup(
+        "رسالة من نجمة ✨",
+        messages[number]
+    );
+}
+
+
+/* ==========================================
+   GIFT
+========================================== */
+
+let giftOpened = false;
+
+function openGift(){
+
+    const gift =
+        document.getElementById("gift");
+
+    if(giftOpened) return;
+
+    giftOpened = true;
+
+    gift.classList.add("open");
+
+    createBurst(
+        window.innerWidth/2,
+        window.innerHeight/2,
+        70
+    );
+
+    setTimeout(()=>{
+
+        nextScreen(9);
+
+    },1200);
+}
+
+
+/* ==========================================
+   FINAL EXPLOSION
+========================================== */
+
+function finalExplosion(){
+
+    createBurst(
+        window.innerWidth/2,
+        window.innerHeight/2,
+        150
+    );
+
+    for(let i=0;i<35;i++){
+
+        setTimeout(()=>{
+
+            createHeart();
+
+        },i*50);
+
+    }
+
+    setTimeout(()=>{
+
+        document
+            .getElementById("screen9")
+            .classList.remove("active");
+
+        document
+            .getElementById("finalScreen")
+            .classList.add("active");
+
+        currentScreen = 10;
+
+        document
+            .getElementById("progressBar")
+            .style.width = "100%";
+
+    },900);
+}
+
+
+/* ==========================================
+   PARTICLE BURST
+========================================== */
+
+function createBurst(x,y,count){
+
+    const symbols = [
+        "❤️",
+        "💗",
+        "💖",
+        "🌹",
+        "✨",
+        "💕",
+        "🌸"
+    ];
+
+    for(let i=0;i<count;i++){
+
+        const particle =
+            document.createElement("div");
+
+        particle.className = "particle";
+
+        particle.textContent =
+            symbols[
+                Math.floor(
+                    Math.random()*symbols.length
+                )
+            ];
+
+        particle.style.left = x + "px";
+        particle.style.top = y + "px";
+
+        const angle =
+            Math.random()*Math.PI*2;
+
+        const distance =
+            60 + Math.random()*260;
+
+        particle.style.setProperty(
+            "--x",
+            Math.cos(angle)*distance
+        );
+
+        particle.style.setProperty(
+            "--y",
+            Math.sin(angle)*distance
+        );
+
+        document.body.appendChild(particle);
+
+        setTimeout(()=>{
+            particle.remove();
+        },1500);
+    }
+}
+
+
+/* ==========================================
+   FLOATING HEART
+========================================== */
+
+function createHeart(){
+
+    const heart =
+        document.createElement("div");
+
+    heart.className = "floatHeart";
+
+    const hearts = [
+        "❤️",
+        "💗",
+        "💖",
+        "💕",
+        "🌹",
+        "✨"
+    ];
+
+    heart.textContent =
+        hearts[
+            Math.floor(
+                Math.random()*hearts.length
+            )
+        ];
+
+    heart.style.left =
+        Math.random()*100 + "%";
+
+    heart.style.fontSize =
+        (14 + Math.random()*25) + "px";
+
+    heart.style.animationDuration =
+        (5 + Math.random()*6) + "s";
+
+    document
+        .getElementById("floating")
+        .appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },12000);
+}
+
+
+/* ==========================================
+   CONSTANT FLOATING HEARTS
+========================================== */
+
+setInterval(()=>{
+
+    createHeart();
+
+},900);
+
+
+/* ==========================================
+   RANDOM SPARKLES
+========================================== */
+
+setInterval(()=>{
+
+    if(Math.random()>.55){
+
+        createBurst(
+            Math.random()*window.innerWidth,
+            Math.random()*window.innerHeight,
+            2
+        );
+
+    }
+
+},1300);
+
+
+/* ==========================================
+   INITIAL
+========================================== */
+
+updateProgress();
+
+</script>
+
+</body>
+</html>
